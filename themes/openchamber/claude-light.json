@@ -1,0 +1,189 @@
+{
+  "metadata": {
+    "id": "claude-light",
+    "name": "CLAUDE PAPER",
+    "description": "CLAUDE PAPER — claude concept from design-gallery, light variant",
+    "version": "1.0.0",
+    "variant": "light",
+    "tags": [
+      "light",
+      "editorial",
+      "clay",
+      "serif",
+      "warm"
+    ]
+  },
+  "colors": {
+    "primary": {
+      "base": "#d97757",
+      "hover": "#c86d50",
+      "active": "#b66449",
+      "foreground": "#fbfbf9",
+      "muted": "#d9775780",
+      "emphasis": "#b26247"
+    },
+    "surface": {
+      "background": "#faf9f5",
+      "foreground": "#141413",
+      "muted": "#f1efe8",
+      "mutedForeground": "#3d3d3a",
+      "elevated": "#ffffff",
+      "elevatedForeground": "#131311",
+      "overlay": "#00000080",
+      "subtle": "#ffffff"
+    },
+    "interactive": {
+      "border": "#131311",
+      "borderHover": "#11110f",
+      "borderFocus": "#d97757",
+      "selection": "#1414131a",
+      "selectionForeground": "#141413",
+      "focus": "#d97757",
+      "focusRing": "#d9775780",
+      "cursor": "#141413",
+      "hover": "#14141314",
+      "active": "#14141324"
+    },
+    "status": {
+      "error": "#b03a2e",
+      "errorForeground": "#fbfbf9",
+      "errorBackground": "#b03a2e33",
+      "errorBorder": "#b03a2e80",
+      "warning": "#a06a00",
+      "warningForeground": "#fbfbf9",
+      "warningBackground": "#a06a0033",
+      "warningBorder": "#a06a0080",
+      "success": "#3d7a4e",
+      "successForeground": "#fbfbf9",
+      "successBackground": "#3d7a4e33",
+      "successBorder": "#3d7a4e80",
+      "info": "#3a5f8a",
+      "infoForeground": "#fbfbf9",
+      "infoBackground": "#3a5f8a33",
+      "infoBorder": "#3a5f8a80"
+    },
+    "pr": {
+      "open": "#3d7a4e",
+      "draft": "#3d3d3a",
+      "blocked": "#a06a00",
+      "merged": "#5f4d9e",
+      "closed": "#b03a2e"
+    },
+    "syntax": {
+      "base": {
+        "background": "#ffffff",
+        "foreground": "#141413",
+        "comment": "#7d7d77",
+        "keyword": "#d97757",
+        "string": "#3d7a4e",
+        "number": "#a06a00",
+        "function": "#b85c3f",
+        "variable": "#141413",
+        "type": "#8a5a33",
+        "operator": "#b03a2e"
+      },
+      "tokens": {
+        "commentDoc": "#6e6e69",
+        "stringEscape": "#376e46",
+        "keywordImport": "#b03a2e",
+        "storageModifier": "#d97757",
+        "functionCall": "#b85c3f",
+        "method": "#b85c3f",
+        "variableProperty": "#d97757",
+        "variableOther": "#141413",
+        "variableGlobal": "#3a5f8a",
+        "variableLocal": "#101010",
+        "parameter": "#141413",
+        "constant": "#141413",
+        "class": "#8a5a33",
+        "className": "#8a5a33",
+        "interface": "#8a5a33",
+        "struct": "#8a5a33",
+        "enum": "#8a5a33",
+        "typeParameter": "#8a5a33",
+        "namespace": "#8a5a33",
+        "module": "#b03a2e",
+        "tag": "#d97757",
+        "jsxTag": "#3d7a4e",
+        "tagAttribute": "#8a5a33",
+        "tagAttributeValue": "#3d7a4e",
+        "boolean": "#8a5a33",
+        "decorator": "#8a5a33",
+        "label": "#3a5f8a",
+        "punctuation": "#7d7d77",
+        "macro": "#d97757",
+        "preprocessor": "#3a5f8a",
+        "regex": "#3d7a4e",
+        "url": "#d97757",
+        "key": "#b85c3f",
+        "exception": "#3a5f8a"
+      },
+      "highlights": {
+        "diffAdded": "#3d7a4e",
+        "diffAddedBackground": "#3d7a4e33",
+        "diffRemoved": "#b03a2e",
+        "diffRemovedBackground": "#b03a2e33",
+        "diffModified": "#d97757",
+        "diffModifiedBackground": "#d9775733",
+        "lineNumber": "#131311",
+        "lineNumberActive": "#141413"
+      }
+    },
+    "markdown": {
+      "heading1": "#302f2e",
+      "heading2": "#595957",
+      "heading3": "#7c7b79",
+      "heading4": "#7c7b79",
+      "link": "#d97757",
+      "linkHover": "#b8654a",
+      "inlineCode": "#3d7a4e",
+      "inlineCodeBackground": "#ffffff",
+      "blockquote": "#7d7d77",
+      "blockquoteBorder": "#131311",
+      "listMarker": "#8a5a3399"
+    },
+    "chat": {
+      "userMessage": "#141413",
+      "userMessageBackground": "#db8062",
+      "assistantMessage": "#141413",
+      "assistantMessageBackground": "#faf9f5",
+      "timestamp": "#3d3d3a",
+      "divider": "#131311"
+    },
+    "tools": {
+      "background": "#ffffff80",
+      "border": "#1313119e",
+      "headerHover": "#1313114d",
+      "icon": "#373734",
+      "title": "#141413",
+      "description": "#3d3d3a",
+      "edit": {
+        "added": "#3d7a4e",
+        "addedBackground": "#3d7a4e40",
+        "removed": "#b03a2e",
+        "removedBackground": "#b03a2e40",
+        "lineNumber": "#131311"
+      }
+    }
+  },
+  "config": {
+    "fonts": {
+      "sans": "'Source Serif 4', 'Source Han Serif SC', Georgia, serif",
+      "mono": "ui-monospace, 'SF Mono', Menlo, monospace",
+      "heading": "'Source Serif 4', Georgia, serif"
+    },
+    "radius": {
+      "none": "0",
+      "sm": "0.25rem",
+      "md": "0.5rem",
+      "lg": "0.75rem",
+      "xl": "1rem",
+      "full": "9999px"
+    },
+    "transitions": {
+      "fast": "150ms ease",
+      "normal": "250ms ease",
+      "slow": "350ms ease"
+    }
+  }
+}

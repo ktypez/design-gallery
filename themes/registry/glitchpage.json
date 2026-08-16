@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "glitchpage",
   "type": "registry:theme",
-  "description": "GLITCHPAGE — error page, neon pink, Thai",
+  "description": "GLITCHPAGE — error page, neon pink/cyan glitch, scanlines, Thai",
   "cssVars": {
     "light": {
       "accent": "#ff3d8f",
@@ -29,6 +29,9 @@
       "primary-foreground": "hsl(230 53% 10%)",
       "radius": "0",
       "ring": "#333d80",
+      "glitch-grid": "rgba(55, 230, 255, 0.06)",
+      "glitch-grid-2": "rgba(255, 61, 143, 0.05)",
+      "glitch-scan": "rgba(0, 0, 0, 0.18)",
       "secondary": "hsl(232 53% 20%)",
       "secondary-foreground": "hsl(234 79% 95%)",
       "shadow": "none",
@@ -60,6 +63,9 @@
       "primary-foreground": "hsl(230 53% 10%)",
       "radius": "0",
       "ring": "#333d80",
+      "glitch-grid": "rgba(55, 230, 255, 0.06)",
+      "glitch-grid-2": "rgba(255, 61, 143, 0.05)",
+      "glitch-scan": "rgba(0, 0, 0, 0.18)",
       "secondary": "hsl(232 53% 20%)",
       "secondary-foreground": "hsl(234 79% 95%)",
       "shadow": "none",
@@ -77,7 +83,7 @@
   },
   "meta": {
     "name": "GLITCHPAGE",
-    "vibe": "error page, neon pink, Thai",
+    "vibe": "error page, neon pink/cyan glitch, scanlines, Thai",
     "mode": "dark-only"
   }
 }

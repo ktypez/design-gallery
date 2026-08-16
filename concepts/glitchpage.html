@@ -46,28 +46,54 @@
     <main class="main">
       <div class="crumb">// CONCEPT 05 / 09 · <a href="../index.html">gallery</a></div>
       <div class="head">
-        <h1>GLITCH<span style="color:#ff3366">PAGE</span></h1>
+        <h1>GLITCH<span style="color:#ff3d8f">PAGE</span></h1>
         <span class="id-pill">id: glitchpage</span>
-        <p>Error-page DNA จาก nginx — dark navy + drift grid + glitch number + terminal. Deploy 5 status (403/404/500/502/503) พร้อม Thai copy ขำๆ</p>
+        <p>Error-page DNA จาก nginx — dark navy + neon pink/cyan glitch + drift grid + scanlines. Deploy 5 status (403/404/500/502/503) พร้อม Thai copy กวนๆ</p>
       </div>
 
       <div class="hero">
         <div class="hero-head">// MOCKUP · /404.html</div>
         <div class="hero-body">
           <div class="gp-stage">
-            <div class="gp-mock">404</div>
+            <div class="gp-mock">404<span class="gp-cursor"></span></div>
             <div class="gp-label">// ERROR · page not found</div>
+            <div class="gp-label" style="color:var(--accent)">● SYSTEM ONLINE — รันอยู่ ไม่ตายยังไงไม่รู้ 💀</div>
           </div>
         </div>
       </div>
 
       <div class="tokens">
-        <div class="tok"><span class="lbl">// ACCENT</span><span class="val"><span class="sw" style="background:#ff3366"></span>#ff3366</span></div>
-        <div class="tok"><span class="lbl">// BG</span><span class="val">#0f0f1a</span></div>
-        <div class="tok"><span class="lbl">// FG</span><span class="val">#e0e0e0</span></div>
+        <div class="tok"><span class="lbl">// ACCENT</span><span class="val"><span class="sw" style="background:#ff3d8f"></span>#ff3d8f</span></div>
+        <div class="tok"><span class="lbl">// BG</span><span class="val">#0b0f2a</span></div>
+        <div class="tok"><span class="lbl">// FG</span><span class="val">#e8eafc</span></div>
         <div class="tok"><span class="lbl">// FONT</span><span class="val">Kanit + Sarabun</span></div>
-        <div class="tok"><span class="lbl">// MOTION</span><span class="val">glitch 3s · drift 20s</span></div>
+        <div class="tok"><span class="lbl">// MOTION</span><span class="val">glitch + drift + scanlines</span></div>
         <div class="tok"><span class="lbl">// RADIUS</span><span class="val">6px · soft</span></div>
+      </div>
+
+      <div class="sec">
+        <div class="sec-h"><span class="num">// 00</span><h2>GLITCH Effects</h2><span class="of">/ remix</span></div>
+        <div class="grid-3">
+          <div class="c">
+            <div class="lbl">// DRIFT GRID</div>
+            <div style="position:relative;height:120px;border:1px solid var(--border);border-radius:2px;overflow:hidden">
+              <div class="gp-grid"></div>
+            </div>
+          </div>
+          <div class="c">
+            <div class="lbl">// SCANLINES</div>
+            <div style="position:relative;height:120px;border:1px solid var(--border);border-radius:2px;overflow:hidden;background:var(--surface-2)">
+              <div class="gp-scanlines"></div>
+              <div style="position:absolute;inset:0;display:grid;place-items:center;font-family:var(--font-display);font-size:22px;color:var(--accent)">SIGNAL</div>
+            </div>
+          </div>
+          <div class="c">
+            <div class="lbl">// BLINK CURSOR</div>
+            <div style="height:120px;border:1px solid var(--border);border-radius:2px;display:flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-mono);color:var(--fg-muted);font-size:13px">
+              ramba รั่วอีกแล้ว <span class="gp-cursor"></span>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="sec">

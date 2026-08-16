@@ -183,6 +183,22 @@ svg { display: block; }
   transform: perspective(400px) rotateX(8deg) scale(1.15);
   transform-origin: top;
   pointer-events: none;
+  animation: gp-drift-2 26s linear infinite;
+}
+.hero-body::after {
+  content: '';
+  position: absolute; inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.18) 0,
+    rgba(0, 0, 0, 0.18) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  mix-blend-mode: multiply;
+  opacity: 0.5;
+  z-index: 2;
 }
 
 /* mock = glitch ตัวเลข */
@@ -202,7 +218,7 @@ svg { display: block; }
   font-weight: 900;
   line-height: 1;
   color: var(--accent);
-  text-shadow: 3px 0 var(--accent-2), -3px 0 #ffff00;
+  text-shadow: 3px 0 var(--accent-2), -3px 0 var(--accent);
   animation: gp-glitch 3s ease-in-out infinite;
 }
 .gp-mock::before,
@@ -218,7 +234,7 @@ svg { display: block; }
   animation: gp-glitch-offset 2s ease-in-out infinite;
 }
 .gp-mock::after {
-  color: #ffff00;
+  color: var(--accent);
   clip-path: inset(60% 0 10% 0);
   animation: gp-glitch-offset 3s ease-in-out infinite reverse;
 }
@@ -632,4 +648,62 @@ svg { display: block; }
   .head h1 { font-size: 23px; }
   .tokens { grid-template-columns: 1fr; }
   .sec-h h2 { font-size: 17px; }
+}
+
+/* ==========================================================================
+   GLITCHPAGE remix — extra effects (drift grid, scanlines, blink cursor)
+   อัพเกรดให้เท่าตัว Glance "GLITCHPAGE // LAB NOC"
+   ========================================================================== */
+@keyframes gp-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+@keyframes gp-drift-2 {
+  to { background-position: 0 28px, 28px 0; }
+}
+@keyframes gp-flicker {
+  0%, 92%, 100% { opacity: 1; }
+  93% { opacity: 0.45; }
+  94% { opacity: 1; }
+  96% { opacity: 0.7; }
+  97% { opacity: 1; }
+}
+
+.gp-grid {
+  position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background-image:
+    linear-gradient(rgba(55, 230, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 61, 143, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+  animation: gp-drift-2 26s linear infinite;
+}
+.gp-scanlines {
+  position: absolute; inset: 0; pointer-events: none; z-index: 2;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.18) 0,
+    rgba(0, 0, 0, 0.18) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  mix-blend-mode: multiply;
+  opacity: 0.55;
+}
+.gp-cursor {
+  display: inline-block;
+  width: 0.5em;
+  height: 0.9em;
+  transform: translateY(0.12em);
+  background: var(--accent);
+  animation: gp-blink 1.1s steps(1) infinite;
+}
+.gp-label-glitch { transition: text-shadow 0.2s, color 0.2s; }
+.gp-label-glitch:hover {
+  color: var(--fg);
+  text-shadow: 1.5px 0 var(--accent-2), -1.5px 0 var(--accent);
+  animation: gp-glitch 0.5s steps(2) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gp-grid, .gp-cursor, .gp-label-glitch:hover { animation: none !important; }
 }
