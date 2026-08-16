@@ -90,6 +90,8 @@ npx shadcn add https://design.mcky.space/r/noc-elements.json
 
 ### สิ่งที่ install เข้าโปรเจกต์
 
+> **Requirement:** element packs import `cn` from `@/lib/utils` (shadcn convention). Run `npx shadcn@latest init` first so `components.json` + `@/lib/utils` exist — otherwise a pack installs but its components won't resolve. Theme items don't need this.
+
 - **Theme** → เพิ่ม CSS variables ใน `globals.css` (`:root` / `.dark`) + `@layer base` body style
 - **Elements** → copy `.tsx` components + `<concept>-effects.css` (keyframes) ลง `components/ui/`
 
@@ -185,7 +187,7 @@ elements ใช้ CSS variables + `cn()` — ต่อยอด class ได้
 
 | ID | Name | Mode | Description |
 |---|---|---|---|
-| `mcky` | mcky.space | dual | Neobrutalism, 3px border, hard shadow, mono 100% |
+| `mcky` | mcky.space | dual | Neobrutalism, vivid pink/green/blue on white, 3px border, mono 100% |
 | `rack` | STACK//FRAME | dark | Server rack, amber LED, Inter+mono |
 | `crt` | PIXSH v1.0 | dark | Phosphor green, scanlines, VT323 |
 | `noc` | PACKETGRID | dark | NOC dashboard, cyan+green |
@@ -329,6 +331,33 @@ design.mcky.space {
     }
 }
 ```
+
+## OpenChamber Themes
+
+เอาฟีลลิ่งของทั้ง 9 concepts ไปใช้กับ [OpenChamber](https://github.com/openchamber/openchamber) (custom themes) — generate จาก `themes/shadcn/*.css` ตัวเดียวกับ shadcn registry:
+
+```bash
+# generate 8 themes → themes/openchamber/
+node tools/openchamber-adapter.mjs
+
+# generate + copy ลง ~/.config/openchamber/themes/ แล้ว reload ใน
+# OpenChamber → Settings → Theme → Reload themes
+node tools/openchamber-adapter.mjs --install
+```
+
+| Theme | ID | variant |
+|---|---|---|
+| CLAUDE PAPER | `claude-light` / `claude-dark` | dual |
+| STACK//FRAME | `rack-dark` | dark |
+| PACKETGRID | `noc-dark` | dark |
+| GLITCHPAGE | `glitchpage-dark` | dark |
+| collage.sh | `min-light` | light |
+| MOSS | `moss-light` | light |
+| BRUT | `brut-light` | light |
+
+**หลักการแมป:** shadcn tokens (`--background`, `--primary`, `--border`, ...) map ตรงไปยังกลุ่ม core ของ OpenChamber (`surface` / `primary` / `interactive` / `status`) ส่วน `syntax` / `markdown` / `chat` / `tools` เป็น hand-crafted role colors ต่อ concept (เก็บ identity อย่าง amber LED, phosphor green, neon pink, clay editorial) — แก้ได้ในตาราง `syn` ใน `tools/openchamber-adapter.mjs`
+
+**ข้อจำกัด:** effects CSS (scanlines / glitch / LED blink) ไม่มีใน OpenChamber theme format — ได้แค่สี + ฟอนต์ + radius. ฟอนต์เฉพาะ (VT323, Fraunces, Anton, Source Serif 4) ต้องติดตั้งบนเครื่องเอง ไม่งั้น fallback ตาม stack
 
 ## Known Issues
 

@@ -35,7 +35,7 @@ const CONCEPTS = {
   glitchpage: {
     name: 'glitchpage-elements',
     displayName: 'GLITCHPAGE Elements',
-    description: 'Glitch error page UI elements — RGB-split glitch text, error labels, animated stage',
+    description: 'Glitch error page UI elements — RGB-split glitch text, blink cursor, drift grid, scanlines, animated stage',
   },
   noc: {
     name: 'noc-elements',
@@ -122,6 +122,10 @@ function generateElementItem(conceptId, meta) {
     name: meta.name,
     type: 'registry:block',
     description: meta.description,
+    // Components import `cn` from `@/lib/utils` (shadcn init convention), so
+    // consumption implicitly requires the consumer to have scaffolded a shadcn
+    // project first. Kept empty because base button/input deps aren't used —
+    // the `cn` helper is assumed present, not a separately-installable item.
     registryDependencies: [],
     files: fileItems,
     meta: {

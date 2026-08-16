@@ -11,6 +11,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { parseCssBlock, isCombinedSelector } from './lib/parse-css.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
@@ -19,35 +20,16 @@ const REGISTRY_DIR = path.join(ROOT, 'themes', 'registry');
 
 // Theme metadata
 const THEMES = [
-  { id: 'mcky', name: 'mcky.space', vibe: 'neobrutalism, 3px border, hard shadow, mono 100%', mode: 'dual' },
+  { id: 'mcky', name: 'mcky.space', vibe: 'neobrutalism, vivid pink/green/blue on white, 3px border, mono 100%', mode: 'dual' },
   { id: 'rack', name: 'STACK//FRAME', vibe: 'server rack, amber LED, Inter+mono', mode: 'dark-only' },
   { id: 'crt', name: 'PIXSH v1.0', vibe: 'phosphor green, scanlines, VT323', mode: 'dark-only' },
   { id: 'noc', name: 'PACKETGRID', vibe: 'NOC dashboard, cyan+green', mode: 'dark-only' },
   { id: 'min', name: 'collage.sh', vibe: 'minimal, olive lime accent', mode: 'light-only' },
-  { id: 'glitchpage', name: 'GLITCHPAGE', vibe: 'error page, neon pink, Thai', mode: 'dark-only' },
+  { id: 'glitchpage', name: 'GLITCHPAGE', vibe: 'error page, neon pink/cyan glitch, scanlines, Thai', mode: 'dark-only' },
   { id: 'claude', name: 'CLAUDE PAPER', vibe: 'warm editorial, clay, Source Serif', mode: 'dual' },
   { id: 'moss', name: 'MOSS', vibe: 'organic, earth + terracotta, Fraunces', mode: 'light-only' },
   { id: 'brut', name: 'BRUT', vibe: 'brutalist, red+black, Anton', mode: 'light-only' },
 ];
-
-// Parse CSS block (extract variables)
-function parseCssBlock(css, selector) {
-  // Handle both ":root, .dark" (combined) and ":root" / ".dark" (separate)
-  const re = new RegExp(`${selector.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*\\{([^}]*)\\}`, 'g');
-  const match = re.exec(css);
-  if (!match) return {};
-  
-  const vars = {};
-  const lines = match[1].split('\n');
-  for (const line of lines) {
-    const m = line.match(/--([a-z0-9-]+)\s*:\s*([^;]+);/);
-    if (m) {
-      // Store WITHOUT -- prefix (shadcn CLI adds it automatically)
-      vars[m[1]] = m[2].trim();
-    }
-  }
-  return vars;
-}
 
 // Generate registry:theme item
 function generateThemeItem(theme) {
@@ -56,27 +38,22 @@ function generateThemeItem(theme) {
     console.error(`  ✗ ${theme.id}.css not found`);
     return null;
   }
-  
+
   const css = fs.readFileSync(cssPath, 'utf-8');
-  
-  // Check if combined ":root, .dark" selector exists (not in comments)
-  // Look for the actual CSS selector pattern
-  const hasCombined = /^\s*:root\s*,\s*\.dark\s*\{/m.test(css);
-  
+
+  // Combined `:root, .dark` block = dark-only / light-only theme — both
+  // mode selectors get the same vars. Otherwise it's a dual theme with
+  // separate `:root` (light) and `.dark` blocks.
+  const hasCombined = isCombinedSelector(css);
   let light = {};
   let dark = {};
-  
   if (hasCombined) {
-    // Dark-only or light-only: all vars in ":root, .dark"
-    const combined = parseCssBlock(css, ':root, .dark');
-    light = combined;
-    dark = combined;
+    light = parseCssBlock(css, ':root, .dark');
+    dark = light;
   } else {
-    // Dual mode: separate :root (light) and .dark
     light = parseCssBlock(css, ':root');
     dark = parseCssBlock(css, '.dark');
   }
-  
   // NOTE: keep ALL vars in `light`/`dark` — do NOT split shared vars into
   // `cssVars.theme`. The shadcn CLI (4.x) writes cssVars.theme into
   // `@theme inline`, which inlines the value into utilities and never emits a
