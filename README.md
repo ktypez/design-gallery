@@ -322,17 +322,28 @@ design-gallery/
 
 ## Hosting
 
-Registry is hosted at `https://design.mcky.space/r/` via Caddy:
+Registry is hosted at `https://design.mcky.space/r/` via Caddy + Cloudflare
+Tunnel (`ui.mcky.space` serves the ui-foundation dist):
 
 ```caddyfile
 design.mcky.space {
-    handle_path /r/* {
-        root * /home/admin/design-gallery/themes/registry
-        header Content-Type "application/json"
+    tls /etc/caddy/origin-server.crt /etc/caddy/origin-server.key
+    handle_errors {
+        rewrite * /{http.error.status_code}.html
+        root * /var/www/localhost/htdocs
+        header Cache-Control "no-store"
+        file_server
+    }
+    root * /home/admin/projects/design-gallery
+    handle {
         file_server
     }
 }
 ```
+
+`themes/registry` is reachable as `/r/` via the repo symlink
+`r → themes/registry`. NOTE: keep `root *` at **site level** — on this
+Caddy build (v2.11.4) `root` inside a `handle` block serves empty 200s.
 
 ## OpenChamber Themes
 
