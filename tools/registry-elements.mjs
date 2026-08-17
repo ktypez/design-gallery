@@ -67,6 +67,11 @@ const CONCEPTS = {
     displayName: 'CLAUDE PAPER Elements',
     description: 'Warm editorial UI elements — note card with tags, callout quote',
   },
+  portal: {
+    name: 'portal-elements',
+    displayName: 'INK // portal Elements',
+    description: 'Bold editorial UI elements — pill buttons, centered modal, field/input, toast, section header, settings row',
+  },
 };
 
 // Auto-discover files in a concept dir, deterministic order:

@@ -196,6 +196,7 @@ elements ใช้ CSS variables + `cn()` — ต่อยอด class ได้
 | `claude` | CLAUDE PAPER | dual | Warm editorial, clay, Source Serif |
 | `moss` | MOSS | light | Organic, earth + terracotta, Fraunces |
 | `brut` | BRUT | light | Brutalist, red+black, Anton |
+| `portal` | INK // portal | dual | Bold editorial, ink page + electric accent, Kanit + IBM Plex Sans Thai |
 
 **Mode semantics:**
 - `dual` — Has both light and dark variants. Toggle with `<html class="dark">`
@@ -217,14 +218,15 @@ elements ใช้ CSS variables + `cn()` — ต่อยอด class ได้
 | `brut-elements` | `BrutManifesto`, `BrutButton` | invert-on-hover |
 | `min-elements` | `MinMock`, `MinCard` | soft shadow |
 | `claude-elements` | `ClaudeNote`, `ClaudeCallout` | — |
+| `portal-elements` | `PortalBtn`, `PortalField`, `PortalInput`, `PortalModal`, `PortalToast` + `usePortalToast`, `PortalSection`, `PortalRow` | — |
 
 ## Registry Structure
 
 ```
 https://design.mcky.space/r/
-├── registry.json          # Collection index (18 items)
-├── <id>.json              # registry:theme ×9 (mcky, rack, crt, noc, min, glitchpage, claude, moss, brut)
-├── <id>-elements.json     # registry:block ×9 (components + effects.css)
+├── registry.json          # Collection index (20 items)
+├── <id>.json              # registry:theme ×10 (mcky, rack, crt, noc, min, glitchpage, claude, moss, brut, portal)
+├── <id>-elements.json     # registry:block ×10 (components + effects.css)
 ```
 
 ## Development

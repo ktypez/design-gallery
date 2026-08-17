@@ -29,6 +29,7 @@ const THEMES = [
   { id: 'claude', name: 'CLAUDE PAPER', vibe: 'warm editorial, clay, Source Serif', mode: 'dual' },
   { id: 'moss', name: 'MOSS', vibe: 'organic, earth + terracotta, Fraunces', mode: 'light-only' },
   { id: 'brut', name: 'BRUT', vibe: 'brutalist, red+black, Anton', mode: 'light-only' },
+  { id: 'portal', name: 'INK // portal', vibe: 'bold editorial — ink page, electric accent, Thai-first type (Kanit + IBM Plex Sans Thai)', mode: 'dual' },
 ];
 
 // Generate registry:theme item

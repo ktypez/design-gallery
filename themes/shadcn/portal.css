@@ -1,0 +1,83 @@
+/* ============================================================================
+   INK // portal — shadcn v4 theme preset (id: portal)
+   Ported from me.mcky.space user portal design (index.html tokens).
+   Bold editorial: ink page, one electric accent, type is the hero.
+   Thai-first typography (Kanit display + IBM Plex Sans Thai body).
+   format: hex (exact brand color) + concept extras
+   ----------------------------------------------------------------------------
+   HOW TO USE in a shadcn v4 project (React + Radix + Tailwind v4):
+   1. One-time: add themes/shadcn/_base.css mapping into your globals.css
+      (the @theme inline block — identical for every theme).
+   2. Paste the :root / .dark blocks below into globals.css, replacing the
+      existing :root/.dark variable definitions.
+   3. Dual-mode theme: :root = light, .dark = dark. Toggle <html class="dark">
+      to switch (or drive from prefers-color-scheme).
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+  --accent                    : #3f5c05;
+  --accent-foreground         : #f6f5ef;
+  --accent-soft               : rgba(60, 92, 5, 0.1);
+  --background                : #f6f5ef;
+  --border                    : #e2ded2;
+  --card                      : #ffffff;
+  --card-foreground           : #17170f;
+  --danger-border             : rgba(214, 69, 69, 0.35);
+  --danger-soft               : rgba(214, 69, 69, 0.12);
+  --destructive               : #d64545;
+  --destructive-foreground    : #ffffff;
+  --ease                      : cubic-bezier(0.16, 1, 0.3, 1);
+  --font-display              : 'Kanit', 'IBM Plex Sans Thai', system-ui, sans-serif;
+  --font-mono                 : ui-monospace, 'SF Mono', 'IBM Plex Sans Thai', monospace;
+  --font-sans                 : 'IBM Plex Sans Thai', system-ui, sans-serif;
+  --foreground                : #17170f;
+  --input                     : #e2ded2;
+  --muted                     : #efece2;
+  --muted-foreground          : #4a483d;
+  --muted-text                : #8a8778;
+  --popover                   : #ffffff;
+  --popover-foreground        : #17170f;
+  --primary                   : #3f5c05;
+  --primary-foreground        : #f6f5ef;
+  --radius                    : 14px;
+  --radius-sm                 : 10px;
+  --ring                      : #c9c4b4;
+  --secondary                 : #f0ede3;
+  --secondary-foreground      : #17170f;
+  --shadow                    : 0 1px 2px rgba(23, 23, 15, 0.05), 0 8px 24px -18px rgba(23, 23, 15, 0.12);
+  --shadow-lg                 : 0 12px 40px rgba(23, 23, 15, 0.18);
+  --shadow-md                 : 0 4px 12px rgba(23, 23, 15, 0.08);
+  --success                   : #1f9d5c;
+}
+
+.dark {
+  color-scheme: dark;
+  --accent                    : #d6ff3f;
+  --accent-foreground         : #10120a;
+  --accent-soft               : rgba(214, 255, 63, 0.1);
+  --background                : #0c0d0f;
+  --border                    : #26292f;
+  --card                      : #16181c;
+  --card-foreground           : #f2f0e8;
+  --danger-border             : rgba(255, 92, 92, 0.35);
+  --danger-soft               : rgba(255, 92, 92, 0.12);
+  --destructive               : #ff5c5c;
+  --destructive-foreground    : #ffffff;
+  --foreground                : #f2f0e8;
+  --input                     : #26292f;
+  --muted                     : #111316;
+  --muted-foreground          : #b6b2a6;
+  --muted-text                : #7a7d85;
+  --popover                   : #16181c;
+  --popover-foreground        : #f2f0e8;
+  --primary                   : #d6ff3f;
+  --primary-foreground        : #10120a;
+  --ring                      : #33373e;
+  --secondary                 : #1c1f24;
+  --secondary-foreground      : #f2f0e8;
+  --shadow                    : 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px -18px rgba(0, 0, 0, 0.6);
+  --shadow-lg                 : 0 12px 40px rgba(0, 0, 0, 0.6);
+  --shadow-md                 : 0 4px 12px rgba(0, 0, 0, 0.4);
+  --success                   : #3ddc84;
+}
