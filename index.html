@@ -376,6 +376,50 @@
       padding: 0 3px; text-transform: uppercase;
     }
 
+    .card[data-id="portal"] .preview {
+      background: #f6f5ef;
+    }
+    .pt-mock {
+      position: relative; z-index: 1;
+      width: 72%;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #e2ded2;
+      border-radius: 14px;
+      box-shadow: 0 1px 3px rgba(23,23,15,0.05), 0 8px 24px rgba(23,23,15,0.06);
+      font-family: 'IBM Plex Sans Thai', system-ui, sans-serif;
+      text-align: left;
+      overflow: hidden;
+    }
+    .pt-mock .pt-bar {
+      height: 6px;
+      background: #3f5c05;
+    }
+    .pt-mock .pt-row {
+      display: flex; align-items: center; gap: 8px;
+      padding: 7px 12px;
+      font-size: 8px; color: #17170f;
+    }
+    .pt-mock .pt-dot {
+      width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0;
+      background: #e2ded2;
+    }
+    .pt-mock .pt-line {
+      height: 6px; border-radius: 3px;
+      background: #e2ded2;
+    }
+    .pt-mock .pt-btn-mock {
+      margin: 0 12px 12px;
+      padding: 6px;
+      background: #3f5c05;
+      color: #f6f5ef;
+      border-radius: 10px;
+      font-size: 9px;
+      font-weight: 700;
+      text-align: center;
+      font-family: 'Kanit', 'IBM Plex Sans Thai', system-ui, sans-serif;
+    }
+
     /* ============== card body ============== */
     .card-body { padding: 18px 20px 20px; flex: 1; display: flex; flex-direction: column; }
     .card-num {
@@ -470,7 +514,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="card-num">// 01 / 09</div>
+          <div class="card-num">// 01 / 10</div>
           <div class="card-name">STACK//FRAME</div>
           <div class="card-id">id: rack · server rack</div>
           <p class="card-desc">
@@ -494,7 +538,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="card-num">// 02 / 09</div>
+          <div class="card-num">// 02 / 10</div>
           <div class="card-name">PIXSH v1.0</div>
           <div class="card-id">id: crt · retro terminal</div>
           <p class="card-desc">
@@ -519,7 +563,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="card-num">// 03 / 09</div>
+          <div class="card-num">// 03 / 10</div>
           <div class="card-name">PACKETGRID</div>
           <div class="card-id">id: noc · NOC dashboard</div>
           <p class="card-desc">
@@ -544,7 +588,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="card-num">// 04 / 09</div>
+          <div class="card-num">// 04 / 10</div>
           <div class="card-name">collage.sh</div>
           <div class="card-id">id: min · minimal geek</div>
           <p class="card-desc">
@@ -565,7 +609,7 @@
           <div class="gp-mock">404</div>
         </div>
         <div class="card-body">
-          <div class="card-num">// 05 / 09</div>
+          <div class="card-num">// 05 / 10</div>
           <div class="card-name">GLITCHPAGE</div>
           <div class="card-id">id: glitchpage · error page</div>
           <p class="card-desc">
@@ -591,7 +635,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="card-num">// 06 / 09</div>
+          <div class="card-num">// 06 / 10</div>
           <div class="card-name">CLAUDE PAPER</div>
           <div class="card-id">id: claude · warm editorial</div>
           <p class="card-desc">
@@ -617,7 +661,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="card-num">// 07 / 09</div>
+          <div class="card-num">// 07 / 10</div>
           <div class="card-name">MOSS</div>
           <div class="card-id">id: moss · organic</div>
           <p class="card-desc">
@@ -642,7 +686,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="card-num">// 08 / 09</div>
+          <div class="card-num">// 08 / 10</div>
           <div class="card-name">BRUT</div>
           <div class="card-id">id: brut · brutalist</div>
           <p class="card-desc">
@@ -668,7 +712,7 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="card-num">// 09 / 09</div>
+          <div class="card-num">// 10 / 10</div>
           <div class="card-name">mcky.space</div>
           <div class="card-id">id: mcky · neobrutalism</div>
           <p class="card-desc">
@@ -681,6 +725,32 @@
             <span><b>Live</b> mcky.space</span>
           </div>
           <a class="card-cta" href="concepts/mcky.html">standalone preview →</a>
+        </div>
+      </article>
+
+      <article class="card" data-id="portal">
+        <div class="preview">
+          <div class="pt-mock">
+            <div class="pt-bar"></div>
+            <div class="pt-row"><span class="pt-dot"></span><span class="pt-line" style="width:70%"></span></div>
+            <div class="pt-row"><span class="pt-dot"></span><span class="pt-line" style="width:55%"></span></div>
+            <div class="pt-btn-mock">เข้าสู่ระบบ</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-num">// 10 / 10</div>
+          <div class="card-name">INK // portal</div>
+          <div class="card-id">id: portal · editorial</div>
+          <p class="card-desc">
+            Editorial warm paper — olive accent (#3f5c05) + Kanit display +
+            IBM Plex Sans Thai body + soft 14px radius + quiet shadows, dual light/dark
+          </p>
+          <div class="card-specs">
+            <span><b>Border</b> 1px soft</span>
+            <span><b>Font</b> Kanit + IBM Plex</span>
+            <span><b>Live</b> me.mcky.space</span>
+          </div>
+          <a class="card-cta" href="concepts/portal.html">standalone preview →</a>
         </div>
       </article>
 

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="portal" data-mode="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INK // portal — Components</title>
+  <link rel="icon" type="image/svg+xml" href="/favicons/lab.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Kanit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="portal.css">
+</head>
+<body>
+  <button class="mob-toggle" id="mobToggle" aria-label="Toggle sidebar">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+  </button>
+  <div class="mob-backdrop" id="mobBackdrop"></div>
+
+  <div class="layout">
+    <aside class="sb">
+      <div class="sb-brand">
+        <div class="mark"><span class="lg">D</span>Design Gallery</div>
+        <div class="sub">// CONCEPT · v1.0</div>
+      </div>
+      <div class="sb-section">
+        <div class="sb-label">CONCEPTS</div>
+        <a class="sb-item" href="rack.html"><span class="num">01</span><span class="dot" style="background:#ffb000"></span><span class="name">STACK//FRAME</span><span class="id">rack</span></a>
+        <a class="sb-item" href="crt.html"><span class="num">02</span><span class="dot" style="background:#00ff66"></span><span class="name">PIXSH v1.0</span><span class="id">crt</span></a>
+        <a class="sb-item" href="noc.html"><span class="num">03</span><span class="dot" style="background:#00d4ff"></span><span class="name">PACKETGRID</span><span class="id">noc</span></a>
+        <a class="sb-item" href="min.html"><span class="num">04</span><span class="dot" style="background:#c8ff00"></span><span class="name">collage.sh</span><span class="id">min</span></a>
+        <a class="sb-item" href="glitchpage.html"><span class="num">05</span><span class="dot" style="background:#ff3366"></span><span class="name">GLITCHPAGE</span><span class="id">glitch</span></a>
+        <a class="sb-item" href="claude.html"><span class="num">06</span><span class="dot" style="background:#d97757"></span><span class="name">CLAUDE PAPER</span><span class="id">claude</span></a>
+        <a class="sb-item" href="moss.html"><span class="num">07</span><span class="dot" style="background:#6a8c3f"></span><span class="name">MOSS</span><span class="id">moss</span></a>
+        <a class="sb-item" href="brut.html"><span class="num">08</span><span class="dot" style="background:#ff2e00"></span><span class="name">BRUT</span><span class="id">brut</span></a>
+        <a class="sb-item" href="mcky.html"><span class="num">09</span><span class="dot" style="background:#ffe066"></span><span class="name">mcky.space</span><span class="id">mcky</span></a>
+        <a class="sb-item active" href="portal.html"><span class="num">10</span><span class="dot" style="background:#3f5c05"></span><span class="name">INK // portal</span><span class="id">portal</span></a>
+      </div>
+      <div class="sb-section">
+        <div class="sb-label">MORE</div>
+        <a class="sb-item" href="../index.html"><span class="num">←</span><span class="dot" style="background:#888"></span><span class="name">Gallery</span><span class="id">/</span></a>
+      </div>
+      <div class="sb-foot">// 2026 · ktypez · <a href="https://github.com/ktypez/design-gallery" target="_blank" rel="noopener">github ↗</a></div>
+    </aside>
+
+    <main class="main">
+      <div class="crumb">
+        <span>// CONCEPT 10 / 10 · <a href="../index.html">gallery</a></span>
+        <div class="mode-toggle" id="modeToggle" role="group" aria-label="Color mode">
+          <span class="opt on" data-mode="light">light</span>
+          <span class="opt" data-mode="dark">dark</span>
+        </div>
+      </div>
+      <div class="head">
+        <h1>INK <span class="ext">//</span> portal</h1>
+        <span class="id-pill">id: portal · editorial · dual mode</span>
+        <p>Design system ของ <a href="https://me.mcky.space" target="_blank" rel="noopener">me.mcky.space ↗</a> — editorial paper: olive accent (#3f5c05) + Kanit display + IBM Plex Sans Thai body + soft radius 14px + quiet warm shadows. จาก <a href="https://github.com/ktypez/portal" target="_blank" rel="noopener">ktypez/portal ↗</a></p>
+      </div>
+
+      <div class="hero">
+        <div class="hero-head">// MOCKUP · ~/portal</div>
+        <div class="hero-body">
+          <div class="pt-signin">
+            <div class="pt-logo">บัญชีของฉัน</div>
+            <div class="pt-sub">จัดการข้อมูลส่วนตัว สมาชิก mcky</div>
+            <div class="pt-field">
+              <label>อีเมล</label>
+              <input type="email" placeholder="you@mcky.space" value="you@mcky.space">
+            </div>
+            <div class="pt-field">
+              <label>รหัสผ่าน</label>
+              <input type="password" placeholder="••••••••" value="password">
+            </div>
+            <button class="pt-btn">เข้าสู่ระบบ</button>
+            <button class="pt-btn ghost" style="margin-top:10px">ลืมรหัสผ่าน?</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="tokens">
+        <div class="tok"><span class="lbl">// ACCENT</span><span class="val"><span class="sw" style="background:#3f5c05"></span>#3f5c05</span></div>
+        <div class="tok"><span class="lbl">// BG</span><span class="val">#f6f5ef / #0c0d0f</span></div>
+        <div class="tok"><span class="lbl">// FG</span><span class="val">#17170f / #f2f0e8</span></div>
+        <div class="tok"><span class="lbl">// BORDER</span><span class="val">1px · #e2ded2</span></div>
+        <div class="tok"><span class="lbl">// RADIUS</span><span class="val">14px · soft</span></div>
+        <div class="tok"><span class="lbl">// FONT</span><span class="val">Kanit + IBM Plex Sans Thai</span></div>
+      </div>
+
+      <div class="sec">
+        <div class="sec-h"><span class="num">// 01</span><h2>Buttons</h2><span class="of">/ 06</span></div>
+        <div class="grid-2">
+          <div class="c"><div class="lbl">// VARIANTS</div><div class="c-row">
+            <button class="x-btn primary">บันทึก</button>
+            <button class="x-btn secondary">ยกเลิก</button>
+            <button class="x-btn ghost">ดูเพิ่มเติม</button>
+            <button class="x-btn danger">ลบ</button>
+          </div></div>
+          <div class="c"><div class="lbl">// SIZES</div><div class="c-row">
+            <button class="x-btn primary sm">SM</button>
+            <button class="x-btn primary">DEFAULT</button>
+            <button class="x-btn primary lg">LARGE</button>
+          </div></div>
+        </div>
+      </div>
+
+      <div class="sec">
+        <div class="sec-h"><span class="num">// 02</span><h2>Inputs</h2><span class="of">/ 06</span></div>
+        <div class="grid-2">
+          <div class="c"><div class="lbl">// TEXT</div>
+            <input class="x-input" placeholder="ชื่อ" value="somchai">
+            <input class="x-input" type="email" placeholder="อีเมล" value="you@mcky.space" style="margin-top:10px">
+            <div style="margin-top:10px"><label class="lbl" style="display:block;margin-bottom:4px">// SELECT</label>
+              <select class="x-select"><option>th</option><option>en</option><option>ja</option></select>
+            </div>
+          </div>
+          <div class="c"><div class="lbl">// TEXTAREA</div>
+            <textarea class="x-textarea" placeholder="บันทึก...">บัญชีของฉัน — จัดการข้อมูลส่วนตัว สมาชิก mcky</textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec">
+        <div class="sec-h"><span class="num">// 03</span><h2>Cards, status, badges</h2><span class="of">/ 06</span></div>
+        <div class="grid-3">
+          <div class="c"><div class="lbl">// CARD</div>
+            <div class="x-card"><div class="ct">บัญชีของฉัน</div><div class="cm">จัดการข้อมูลส่วนตัว สมาชิก mcky</div></div>
+            <div class="x-card" style="margin-top:10px"><div class="ct">สิทธิ์การใช้งาน</div><div class="cm">แอปที่คุณสามารถเข้าถึงได้</div></div>
+          </div>
+          <div class="c"><div class="lbl">// STATUS</div>
+            <div class="c-row">
+              <span class="x-status ok">ACTIVE</span>
+              <span class="x-status warn">PENDING</span>
+              <span class="x-status bad">REVOKED</span>
+            </div>
+            <div class="lbl" style="margin-top:14px">// KBD</div>
+            <div>Press <span class="x-kbd">⌘</span> + <span class="x-kbd">K</span> to search</div>
+          </div>
+          <div class="c"><div class="lbl">// BADGES</div>
+            <div class="c-row">
+              <span class="x-badge">v1.0</span>
+              <span class="x-badge outline">BETA</span>
+              <span class="x-badge muted">DRAFT</span>
+            </div>
+            <div class="lbl" style="margin-top:14px">// ALERT</div>
+            <div class="x-alert warn"><span class="icon">!</span><div class="txt"><strong> session ใกล้หมด</strong><span>กรุณาเข้าสู่ระบบอีกครั้ง</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec">
+        <div class="sec-h"><span class="num">// 04</span><h2>Modal · Toast · Tabs</h2><span class="of">/ 06</span></div>
+        <div class="grid-2">
+          <div class="c"><div class="lbl">// TABS</div>
+            <div class="x-tabs"><div class="t active">ข้อมูล</div><div class="t">LINE</div><div class="t">สิทธิ์</div></div>
+            <div style="padding:12px 0;font-size:13px;color:var(--fg-muted)">// จัดการข้อมูลส่วนตัวของคุณ</div>
+            <div class="lbl" style="margin-top:14px">// BREADCRUMB</div>
+            <div class="x-crumb"><a href="#">หน้าแรก</a><span class="sep">/</span><a href="#">บัญชี</a><span class="sep">/</span><span>ข้อมูลส่วนตัว</span></div>
+          </div>
+          <div class="c"><div class="lbl">// TOAST</div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div style="padding:10px 14px;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--surface);box-shadow:var(--shadow-sm);font-size:13px;display:flex;align-items:center;gap:10px">
+                <span style="width:18px;height:18px;border-radius:50%;background:var(--success);color:#fff;display:grid;place-items:center;font-size:11px;font-weight:800">✓</span>
+                <div><b style="color:var(--fg)">บันทึกสำเร็จ</b><div style="font-size:12px;color:var(--fg-muted)">ข้อมูลของคุณถูกอัปเดตแล้ว</div></div>
+              </div>
+              <div style="padding:10px 14px;border-radius:var(--radius-sm);border:1px solid var(--danger);background:rgba(214,69,69,0.06);font-size:13px;display:flex;align-items:center;gap:10px">
+                <span style="width:18px;height:18px;border-radius:50%;background:var(--danger);color:#fff;display:grid;place-items:center;font-size:11px;font-weight:800">!</span>
+                <div><b style="color:var(--fg)">ไม่สามารถลบได้</b><div style="font-size:12px;color:var(--fg-muted)">กรุณาติดต่อผู้ดูแลระบบ</div></div>
+              </div>
+            </div>
+            <div class="lbl" style="margin-top:14px">// MODAL PREVIEW</div>
+            <div style="padding:14px;border-radius:var(--radius);border:1px dashed var(--border);background:var(--bg);font-size:12px;color:var(--fg-dim);text-align:center">
+              Modal shell · olive header · 14px radius
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script>
+    const sidebar = document.querySelector('.sb');
+    const toggle = document.getElementById('mobToggle');
+    const backdrop = document.getElementById('mobBackdrop');
+    const isMobile = () => window.matchMedia('(max-width: 900px)').matches;
+    const open = () => { if (!isMobile()) return; sidebar.classList.add('open'); backdrop.classList.add('open'); };
+    const close = () => { sidebar.classList.remove('open'); backdrop.classList.remove('open'); };
+    toggle.addEventListener('click', () => sidebar.classList.contains('open') ? close() : open());
+    backdrop.addEventListener('click', close);
+    document.querySelectorAll('.sb-item').forEach(i => i.addEventListener('click', close));
+    window.addEventListener('resize', () => { if (!isMobile()) close(); });
+
+    /* light/dark mode toggle */
+    const root = document.documentElement;
+    const opts = document.querySelectorAll('.mode-toggle .opt');
+    const setMode = (m) => {
+      root.dataset.mode = m;
+      opts.forEach(o => o.classList.toggle('on', o.dataset.mode === m));
+    };
+    opts.forEach(o => o.addEventListener('click', () => setMode(o.dataset.mode)));
+  </script>
+</body>
+</html>
