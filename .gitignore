@@ -27,3 +27,6 @@ dist/
 
 # extracted themes (user-generated, regenerable)
 themes/extracted/
+
+# OpenChamber theme JSON (generated on demand via tools/openchamber-adapter.mjs)
+themes/openchamber/

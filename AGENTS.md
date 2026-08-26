@@ -16,7 +16,8 @@ OpenChamber theme JSON. Served statically at `https://design.mcky.space`.
 - **No package.json, no bundler, no build step, no tests, no linter.** A pure
   Node-script + static file repo.
 - The only generated artifacts kept are `themes/openchamber/*.json` (committed,
-  regenerated from source).
+  regenerated from source) — **currently not committed**; generate on demand
+  via `node tools/openchamber-adapter.mjs`.
 
 ## Source-of-truth chain
 
@@ -41,7 +42,7 @@ node tools/openchamber-adapter.mjs --install       # ...and copy to ~/.config/op
 ## Directory map
 
 - `themes/shadcn/` — hand-written color-token CSS, one file per concept + `_base.css`.
-- `themes/openchamber/` — generated OpenChamber theme JSON (committed).
+- `themes/openchamber/` — generated OpenChamber theme JSON (gitignored, generate on demand).
 - `tools/` — Node scripts (no deps, `node` + stdlib only).
 - `tools/lib/parse-css.mjs` — shared CSS-variable parsing (`parseCssBlock`,
   `isCombinedSelector`, `getThemeVars`) used by `openchamber-adapter.mjs`.

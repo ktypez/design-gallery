@@ -48,34 +48,22 @@ One CSS file per concept, following shadcn token naming (`--background`,
 concept-specific extras like `--accent-2`, `--led-cyan`, `--border-width`,
 `--font-display`). These are the same values ui-foundation was seeded from.
 
-## OpenChamber Themes
+## OpenChamber Adapter
 
-เอาฟีลลิ่งของ concepts ไปใช้กับ [OpenChamber](https://github.com/openchamber/openchamber) (custom themes) — generate จาก `themes/shadcn/*.css`:
+ตัวแปลง shadcn tokens → [OpenChamber](https://github.com/openchamber/openchamber) custom theme JSON:
 
 ```bash
-# generate themes → themes/openchamber/
-node tools/openchamber-adapter.mjs
-
-# generate + copy ลง ~/.config/openchamber/themes/ แล้ว reload ใน
-# OpenChamber → Settings → Theme → Reload themes
-node tools/openchamber-adapter.mjs --install
+node tools/openchamber-adapter.mjs            # generate → themes/openchamber/
+node tools/openchamber-adapter.mjs --install  # + copy to ~/.config/openchamber/themes/
 ```
 
-| Theme | ID | variant |
-|---|---|---|
-| CLAUDE PAPER | `claude-light` / `claude-dark` | dual |
-| STACK//FRAME | `rack-dark` | dark |
-| PACKETGRID | `noc-dark` | dark |
-| GLITCHPAGE | `glitchpage-dark` | dark |
-| collage.sh | `min-light` | light |
-| MOSS | `moss-light` | light |
-| BRUT | `brut-light` | light |
+**Generate เฉพาะตอนต้องการใช้ — ไฟล์ JSON ไม่ได้ commit ไว้ใน repo แล้ว**
+(แต่ถ้าอยากเก็บเป็นประจำก็ `git add themes/openchamber/` เองได้)
 
 **หลักการแมป:** shadcn tokens (`--background`, `--primary`, `--border`, ...) map
 ตรงไปยังกลุ่ม core ของ OpenChamber (`surface` / `primary` / `interactive` /
 `status`) ส่วน `syntax` / `markdown` / `chat` / `tools` เป็น hand-crafted role
-colors ต่อ concept (เก็บ identity อย่าง amber LED, phosphor green, neon pink,
-clay editorial) — แก้ได้ในตาราง `syn` ใน `tools/openchamber-adapter.mjs`
+colors ต่อ concept — แก้ได้ในตาราง `syn` ใน `tools/openchamber-adapter.mjs`
 
 **ข้อจำกัด:** effects CSS (scanlines / glitch / LED blink) ไม่มีใน OpenChamber
 theme format — ได้แค่สี + ฟอนต์ + radius. ฟอนต์เฉพาะ (VT323, Fraunces, Anton,
@@ -87,7 +75,7 @@ Source Serif 4) ต้องติดตั้งบนเครื่องเ�
 design-gallery/
 ├── themes/
 │   ├── shadcn/          # Source CSS (10 themes, hand-maintained)
-│   └── openchamber/     # Generated OpenChamber theme JSON (committed)
+│   └── openchamber/     # Generated OpenChamber theme JSON (gitignored, generate on demand)
 ├── concepts/            # Original concept HTML+CSS mockups (the "vibe")
 ├── tools/
 │   ├── lib/parse-css.mjs      # shared CSS-variable parsing
@@ -98,7 +86,7 @@ design-gallery/
 ## Development
 
 - เปลี่ยนสี theme → แก้ `themes/shadcn/<id>.css` แล้ว rerun
-  `node tools/openchamber-adapter.mjs` เพื่อ sync `themes/openchamber/`
+  `node tools/openchamber-adapter.mjs` ถ้าต้องการ OpenChamber theme ใหม่
 - เพิ่ม concept ใหม่ → สร้าง `themes/shadcn/<id>.css` + `concepts/<id>.html`+
   `.css`, เพิ่มใน `syn`/`THEMES` ของ adapter, แล้วอัปเดต `index.html` (grid +
   ตัวเลขใน topbar)
